@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F30723923BC81F900B98D58 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30723823BC81F900B98D58 /* Feed.swift */; };
+		7F7B214423BC8D0B0022EB1A /* TikTokNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7B214323BC8D0B0022EB1A /* TikTokNetWork.swift */; };
+		7FFF141523BCD9F300447ED9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF141423BCD9F300447ED9 /* Helper.swift */; };
 		81186EFC2387820D004D8576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81186EFB2387820D004D8576 /* AppDelegate.swift */; };
 		81186EFE2387820D004D8576 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81186EFD2387820D004D8576 /* SceneDelegate.swift */; };
 		81186F002387820D004D8576 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81186EFF2387820D004D8576 /* ViewController.swift */; };
@@ -21,6 +24,10 @@
 		155DD478FDCE691290C31DE9 /* Pods-TikTok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.release.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.release.xcconfig"; sourceTree = "<group>"; };
 		3DD337B95A0B0A8348810E23 /* Pods_TikTok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1EF56B01C80DDEC6F378A5 /* Pods-TikTok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.debug.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.debug.xcconfig"; sourceTree = "<group>"; };
+		7F30723823BC81F900B98D58 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		7F7B214323BC8D0B0022EB1A /* TikTokNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokNetWork.swift; sourceTree = "<group>"; };
+		7FFF141423BCD9F300447ED9 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		7FFF141623BCDAF900447ED9 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		81186EF82387820D004D8576 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81186EFB2387820D004D8576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81186EFD2387820D004D8576 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +51,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F30723A23BC820400B98D58 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F30723823BC81F900B98D58 /* Feed.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7FD8DA4B23BC95D9002179EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81186F0F23878627004D8576 /* VideoCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7FFF141323BCD98B00447ED9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7F7B214323BC8D0B0022EB1A /* TikTokNetWork.swift */,
+				7FFF141423BCD9F300447ED9 /* Helper.swift */,
+				7FFF141623BCDAF900447ED9 /* MyPlayground.playground */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		81186EEF2387820D004D8576 = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +101,9 @@
 				81186EFB2387820D004D8576 /* AppDelegate.swift */,
 				81186EFD2387820D004D8576 /* SceneDelegate.swift */,
 				81186EFF2387820D004D8576 /* ViewController.swift */,
-				81186F0F23878627004D8576 /* VideoCell.swift */,
+				7FFF141323BCD98B00447ED9 /* Helper */,
+				7FD8DA4B23BC95D9002179EB /* View */,
+				7F30723A23BC820400B98D58 /* Model */,
 				81186F012387820D004D8576 /* Main.storyboard */,
 				81186F042387820E004D8576 /* Assets.xcassets */,
 				81186F062387820E004D8576 /* LaunchScreen.storyboard */,
@@ -210,9 +245,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				81186F002387820D004D8576 /* ViewController.swift in Sources */,
+				7F30723923BC81F900B98D58 /* Feed.swift in Sources */,
 				81186F1023878627004D8576 /* VideoCell.swift in Sources */,
+				7F7B214423BC8D0B0022EB1A /* TikTokNetWork.swift in Sources */,
 				81186EFC2387820D004D8576 /* AppDelegate.swift in Sources */,
 				81186EFE2387820D004D8576 /* SceneDelegate.swift in Sources */,
+				7FFF141523BCD9F300447ED9 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
