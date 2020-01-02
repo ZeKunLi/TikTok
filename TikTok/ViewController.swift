@@ -12,10 +12,17 @@ import NVActivityIndicatorView
 class ViewController: UIViewController {
     
     var page = 12
+    var currentPage = 0
+    
     var awemes = [AwemeList]()
+    
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingView: NVActivityIndicatorView!
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,14 +72,21 @@ extension ViewController:  UITableViewDataSource {
     
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         page -= 1
-        getList()
+        currentPage = (tableView.indexPathsForVisibleRows?.last?.row)!
+        if currentPage == awemes.count - 1{
+            getList()
+        }
+        print("页码" + "\(currentPage)")
+        
     }
     
 }
 
 
 extension ViewController:  UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UIScreen.main.bounds.size.height
+    }
 }
 
 

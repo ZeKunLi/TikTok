@@ -9,6 +9,8 @@
 import UIKit
 import MarqueeLabel
 import Kingfisher
+import ChainableAnimations
+
 class VideoCell: UITableViewCell {
     
     var aweme: AwemeList! {
@@ -73,11 +75,32 @@ class VideoCell: UITableViewCell {
     @IBOutlet weak var musicCoverImageView: UIImageView!
     @IBOutlet weak var rotateDiskView: UIImageView!
     
+    var animator1: ChainableAnimator!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    override func prepareForReuse() {
+        // 重置按钮状态   
+        if animator1 != nil {
+            followButton.setImage(UIImage(named: "icon_personal_add_little"), for: .normal)
+            followButton.transform = .identity
+            followButton.layer.removeAllAnimations()
+        }
+        
+    }
+    
+    @IBAction func addFollowTap(_ sender: UIButton) {
+        animator1 = ChainableAnimator(view: sender)
+        UIView.transition(with: sender, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            sender.setImage(UIImage(named: "iconSignDone"), for: .normal)
+        }) { (Bool) in
+            self.animator1.rotate(angle: 360).thenAfter(t: 0.6).wait(t: 0.3).transform(scale: 0).animate(t: 0.2)
+        }
+    }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
