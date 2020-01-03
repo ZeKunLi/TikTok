@@ -73,9 +73,7 @@ extension ViewController:  UITableViewDataSource {
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         page -= 1
         currentPage = (tableView.indexPathsForVisibleRows?.last?.row)!
-        if currentPage == awemes.count - 1{
-            getList()
-        }
+        getList()
         print("页码" + "\(currentPage)")
         
     }

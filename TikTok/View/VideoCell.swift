@@ -43,7 +43,8 @@ class VideoCell: UITableViewCell {
             let musicCover = aweme.music!.coverThumb!.urlList![0]
             musicCoverImageView.kf.setImage(with: URL(string: musicCover)!)
             
-            
+            animator2 = ChainableAnimator(view: subDiskView)
+            animator2.rotate(angle: 360).animateWithRepeat(t: 3.5, count: 50)
             
         }
     }
@@ -76,6 +77,7 @@ class VideoCell: UITableViewCell {
     @IBOutlet weak var rotateDiskView: UIImageView!
     
     var animator1: ChainableAnimator!
+    var animator2: ChainableAnimator!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -83,11 +85,16 @@ class VideoCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        // 重置按钮状态   
+        // 重置按钮状态
         if animator1 != nil {
             followButton.setImage(UIImage(named: "icon_personal_add_little"), for: .normal)
             followButton.transform = .identity
             followButton.layer.removeAllAnimations()
+        }
+        
+        if animator2 != nil {
+            subDiskView.transform = .identity
+            subDiskView.layer.removeAllAnimations()
         }
         
     }
